@@ -1,0 +1,41 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/flip-card/flip-card.html">
+
+
+<dom-module id="pdashboard-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+
+    <flip-card>
+      <front>Flip me</front>
+      <back>You flipped me</back>
+    </flip-card>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class PDashboardApp extends Polymer.Element {
+      static get is() { return 'pdashboard-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'pdashboard-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PDashboardApp.is, PDashboardApp);
+        document.querySelector('flip-card').toggle();
+
+  </script>
+</dom-module>
